@@ -436,34 +436,51 @@ function renderStudyPanel(item) {
   if (!details) return "";
 
   const facts = details.facts.map(fact => `<li>${fact}</li>`).join("");
+  const sectionIcon = {
+    facts: "01",
+    question: "02",
+    state: "03",
+    other: "04",
+    ruling: "05",
+    line: "06"
+  };
   return `
     <details class="case-study">
       <summary>
-        <span class="study-summary-title">תקציר לימוד מלא</span>
-        <span class="study-summary-hint">עובדות, שאלה משפטית, טענות והכרעה</span>
+        <span class="study-summary-copy">
+          <span class="study-kicker">Case Brief</span>
+          <span class="study-summary-title">תקציר לימוד מלא</span>
+          <span class="study-summary-hint">עובדות, שאלה משפטית, טענות והכרעה</span>
+        </span>
       </summary>
       <div class="study-grid">
-        <section>
+        <section class="study-card facts-card">
+          <span class="study-index">${sectionIcon.facts}</span>
           <h4>עובדות שצריך לזכור</h4>
           <ul>${facts}</ul>
         </section>
-        <section>
+        <section class="study-card question-card">
+          <span class="study-index">${sectionIcon.question}</span>
           <h4>השאלה המשפטית</h4>
           <p>${details.legalQuestion}</p>
         </section>
-        <section>
+        <section class="study-card state-card">
+          <span class="study-index">${sectionIcon.state}</span>
           <h4>טענת המדינה</h4>
           <p>${details.statePosition}</p>
         </section>
-        <section>
+        <section class="study-card other-card">
+          <span class="study-index">${sectionIcon.other}</span>
           <h4>טענת הצד השני</h4>
           <p>${details.otherPosition}</p>
         </section>
-        <section>
+        <section class="study-card ruling-card">
+          <span class="study-index">${sectionIcon.ruling}</span>
           <h4>הכרעה / מצב ההליך</h4>
           <p>${details.ruling}</p>
         </section>
-        <section class="interview-line">
+        <section class="study-card interview-line">
+          <span class="study-index">${sectionIcon.line}</span>
           <h4>משפט סיכום לראיון</h4>
           <p>${details.interviewLine}</p>
         </section>
