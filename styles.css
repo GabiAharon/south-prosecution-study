@@ -31,7 +31,7 @@ a { color: var(--accent); }
 }
 
 .header-inner {
-  width: min(1180px, 100%);
+  width: min(1400px, 100%);
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
@@ -86,7 +86,7 @@ h1 {
 }
 
 main {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1400px, calc(100% - 32px));
   margin: 0 auto;
   padding: 24px 0 56px;
 }
@@ -151,7 +151,7 @@ input[type="search"] {
 
 .layout {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 22px;
   align-items: start;
 }
@@ -203,6 +203,10 @@ input[type="search"] {
   padding: 18px;
   display: grid;
   gap: 12px;
+}
+
+.case-card:has(.case-study[open]) {
+  grid-column: 1 / -1;
 }
 
 .case-card h3 {
@@ -346,24 +350,31 @@ input[type="search"] {
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
   padding: 0 18px 18px;
   animation: studyReveal .22s ease-out;
 }
 
 .study-card {
   position: relative;
-  min-height: 150px;
+  min-height: 0;
   border: 1px solid #dde6df;
   border-radius: 8px;
   background: rgba(255, 255, 255, .86);
-  padding: 34px 14px 14px;
+  padding: 34px 16px 16px;
   box-shadow: 0 10px 22px rgba(31, 39, 36, .055);
 }
 
-.facts-card,
+.facts-card {
+  grid-column: span 5;
+}
+
 .question-card {
-  grid-column: span 6;
+  grid-column: span 4;
+}
+
+.ruling-card {
+  grid-column: span 3;
 }
 
 .state-card,
@@ -372,12 +383,8 @@ input[type="search"] {
   background: linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(242, 245, 243, .9));
 }
 
-.ruling-card {
-  grid-column: span 5;
-}
-
 .interview-line {
-  grid-column: span 7;
+  grid-column: 1 / -1;
 }
 
 .study-index {
@@ -398,13 +405,18 @@ input[type="search"] {
 
 .study-grid p {
   color: #33413c;
+  line-height: 1.72;
 }
 
 .study-grid ul {
   margin: 0;
   padding-right: 18px;
-  line-height: 1.65;
+  line-height: 1.72;
   color: #33413c;
+}
+
+.study-grid li + li {
+  margin-top: 6px;
 }
 
 .interview-line {
@@ -513,6 +525,10 @@ input[type="search"] {
   .study-grid {
     grid-template-columns: 1fr;
     padding: 0 14px 14px;
+  }
+
+  .case-card:has(.case-study[open]) {
+    grid-column: auto;
   }
 
   .facts-card,
