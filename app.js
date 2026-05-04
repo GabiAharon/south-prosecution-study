@@ -438,7 +438,10 @@ function renderStudyPanel(item) {
   const facts = details.facts.map(fact => `<li>${fact}</li>`).join("");
   return `
     <details class="case-study">
-      <summary>פתח תקציר לימוד מלא</summary>
+      <summary>
+        <span class="study-summary-title">תקציר לימוד מלא</span>
+        <span class="study-summary-hint">עובדות, שאלה משפטית, טענות והכרעה</span>
+      </summary>
       <div class="study-grid">
         <section>
           <h4>עובדות שצריך לזכור</h4>
