@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#263d36">
+  <title>הכנה לראיון | פרקליטות מחוז דרום אזרחי</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <div>
+        <p class="eyebrow">כלי לימוד מבוסס מקורות</p>
+        <h1>הכנה לראיון התמחות בפרקליטות מחוז דרום אזרחי</h1>
+        <p class="lead">שאלות לפי נושאים, תשובות קצרות לתרגול, ותיקים אמיתיים שנמצאו במקורות פתוחים. כל תיק מסומן לפי רמת אימות כדי שתדע במה להשתמש בביטחון בראיון.</p>
+      </div>
+      <div class="header-panel" aria-label="תקציר">
+        <span class="metric"><strong id="caseCount">0</strong> תיקים</span>
+        <span class="metric"><strong id="questionCount">0</strong> שאלות</span>
+        <span class="metric"><strong id="sourceCount">0</strong> מקורות</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="toolbar" aria-label="כלי חיפוש וסינון">
+      <label class="search-box">
+        <span>חיפוש</span>
+        <input id="searchInput" type="search" placeholder="לדוגמה: נחל אשלים, מכרזים, חובת הגינות">
+      </label>
+      <div class="filters" id="topicFilters"></div>
+    </section>
+
+    <section class="notice">
+      <h2>איך להשתמש בזה בראיון</h2>
+      <p>בחר נושא אחד שאתה רוצה להציג כסוגיה משפטית, למד תיק אחד לעומק, ואז תרגל תשובה של 90 שניות: עובדות, שאלה משפטית, עמדת המדינה, טענת נגד, וסיבה אישית למה הנושא מעניין אותך.</p>
+    </section>
+
+    <section class="layout">
+      <aside class="side-panel">
+        <h2>מסלול מומלץ</h2>
+        <ol id="studyPath"></ol>
+        <button id="resetProgress" class="ghost-button" type="button">איפוס סימוני לימוד</button>
+      </aside>
+
+      <div class="content-stack">
+        <section>
+          <div class="section-title">
+            <h2>תיקים לפי נושא</h2>
+            <p>התיקים הראשונים בכל נושא הם אלה שהכי קל להפוך לתשובה בראיון.</p>
+          </div>
+          <div id="caseGrid" class="case-grid"></div>
+        </section>
+
+        <section>
+          <div class="section-title">
+            <h2>שאלות ותשובות לתרגול</h2>
+            <p>התשובות מנוסחות כבסיס; אל תשנן מילה במילה. התאמה אישית תישמע טוב יותר.</p>
+          </div>
+          <div id="qaList" class="qa-list"></div>
+        </section>
+
+        <section>
+          <div class="section-title">
+            <h2>מקורות</h2>
+            <p>מומלץ לפתוח את המקור של התיק שבחרת לפני הראיון ולרשום לעצמך 5 נקודות.</p>
+          </div>
+          <div id="sourcesList" class="sources-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

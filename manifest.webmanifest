@@ -1,0 +1,10 @@
+{
+  "name": "הכנה לראיון פרקליטות דרום אזרחי",
+  "short_name": "פרקליטות דרום",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f4ee",
+  "theme_color": "#263d36",
+  "lang": "he",
+  "dir": "rtl"
+}
